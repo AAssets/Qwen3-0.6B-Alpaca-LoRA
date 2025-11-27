@@ -51,7 +51,7 @@ peft_config = LoraConfig(
 # 5. SFTConfig
 sft_config = SFTConfig(
     output_dir=OUTPUT_DIR,
-    max_length=1024,        # Maximum sequence length
+    max_length=512,        # Maximum sequence length
     gradient_checkpointing=True,
     per_device_train_batch_size=1,
     gradient_accumulation_steps=16, 
