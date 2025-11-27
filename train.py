@@ -61,15 +61,9 @@ sft_config = SFTConfig(
     fp16=False,
     bf16=True,
     packing=False,
-    report_to="none",
+    report_to="swanlab",
+    run_name="Qwen3-0.6B-LoRA-Run1",
     dataset_text_field=None
-)
-
-# 6. Initialize SwanLab Callback
-swanlab_callback = SwanLabCallback(
-    project="Qwen3-Alpaca-Finetune",  # Your project name
-    experiment_name="Qwen3-0.6B-LoRA-Run1", # Specific run name
-    description="Fine-tuning Qwen3-0.6B on Alpaca dataset using LoRA and TRL."
 )
 
 # 7. Initialize Trainer
@@ -79,7 +73,6 @@ trainer = SFTTrainer(
     train_dataset=train_dataset,
     args=sft_config,
     peft_config=peft_config,
-    callbacks=[swanlab_callback]
 )
 
 print("配置完成，开始训练...")
