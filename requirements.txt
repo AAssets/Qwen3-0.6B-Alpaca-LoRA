@@ -1,8 +1,8 @@
-"torch" 
-"transformers" 
-"peft" 
-"trl" 
-"datasets" 
-"swanlab" 
-"accelerate" 
-"bitsandbytes" 
+torch
+transformers
+peft
+trl
+datasets
+swanlab
+accelerate
+bitsandbytes
