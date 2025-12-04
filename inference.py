@@ -3,7 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 # 1. Configuration
-BASE_MODEL_ID = "Qwen/Qwen3-0.6B"
+BASE_MODEL_ID = "Qwen/Qwen3-0.6B-Base"
 # Path to saved LoRA adapter
 LORA_PATH = "./qwen3-alpaca-lora"
 
