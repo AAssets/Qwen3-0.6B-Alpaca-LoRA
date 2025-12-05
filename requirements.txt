@@ -1,8 +1,9 @@
 torch
-transformers
+transformers[serving]
 peft
 trl
 datasets
 swanlab
 accelerate
 bitsandbytes
+modelscope
