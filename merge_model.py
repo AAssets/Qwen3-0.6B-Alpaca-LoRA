@@ -4,7 +4,7 @@ from peft import PeftModel
 import os
 
 # 1. Configuration
-BASE_MODEL_ID = "Qwen/Qwen3-0.6B-Base"  
+BASE_MODEL_ID = "Qwen/Qwen3-0.6B-Alpaca-LoRA/model_hub"  
 LORA_PATH = "./qwen3-alpaca-lora"       
 MERGED_DIR = "./merged_qwen_alpaca"     
 

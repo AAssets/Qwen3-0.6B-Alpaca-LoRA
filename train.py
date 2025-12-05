@@ -7,7 +7,7 @@ from trl import SFTTrainer, SFTConfig
 from swanlab.integration.huggingface import SwanLabCallback
 
 # 1. model and preprocess
-MODEL_ID = "Qwen/Qwen3-0.6B-Base"       # Base
+MODEL_ID = "Qwen/Qwen3-0.6B-Alpaca-LoRA/model_hub"       # Base
 DATASET_ID = "yahma/alpaca-cleaned" # Alpaca
 OUTPUT_DIR = "./qwen3-alpaca-lora"  # output
 
