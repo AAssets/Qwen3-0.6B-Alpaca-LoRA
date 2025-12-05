@@ -7,7 +7,7 @@ from trl import SFTTrainer, SFTConfig
 from swanlab.integration.huggingface import SwanLabCallback
 
 # 1. model and preprocess
-MODEL_ID = "Qwen/Qwen3-0.6B-Alpaca-LoRA/model_hub"       # Base
+MODEL_ID = "./model_hub"       # Base
 DATASET_ID = "yahma/alpaca-cleaned" # Alpaca
 OUTPUT_DIR = "./qwen3-alpaca-lora"  # output
 
@@ -44,25 +44,27 @@ peft_config = LoraConfig(
     task_type=TaskType.CAUSAL_LM,
     r=16,           # rank
     lora_alpha=32,  
-    lora_dropout=0.05,
+    lora_dropout=0,
     target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
 )
 
 # 5. SFTConfig
 sft_config = SFTConfig(
     output_dir=OUTPUT_DIR,
-    max_length=512,        # Maximum sequence length
+    max_length=1024,        # Maximum sequence length
     gradient_checkpointing=True,
-    per_device_train_batch_size=1,
-    gradient_accumulation_steps=16, 
+    per_device_train_batch_size=8,
+    gradient_accumulation_steps=2, 
     learning_rate=1e-4,
-    num_train_epochs=1,         # Number of training epochs (1 for demo)
+    num_train_epochs=3,         # Number of training epochs (3)
+    save_strategy="epoch",
+    save_total_limit=3,
     logging_steps=10,
     fp16=False,
     bf16=True,
     packing=False,
     report_to="swanlab",
-    run_name="Qwen3-0.6B-LoRA-Run1",
+    run_name="Qwen3-4B-LoRA-Run1",
     dataset_text_field=None
 )
 
