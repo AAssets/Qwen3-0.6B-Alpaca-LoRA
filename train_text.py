@@ -29,8 +29,6 @@ def create_text_column(example):
         text = f"<|im_start|>user\n{inst}\nContext:\n{inp}<|im_end|>\n<|im_start|>assistant\n{out}<|im_end|>\n"
     else:
         text = f"<|im_start|>user\n{inst}<|im_end|>\n<|im_start|>assistant\n{out}<|im_end|>\n"
-        
-    # 返回一个包含 'text' 键的字典
     return {"text": text}
 
 print("正在加载数据...")
