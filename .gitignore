@@ -7,3 +7,7 @@
 ".vscode/" 
 model_hub/
 "*.log"
+qwen3-alpaca-lora/
+merged_qwen_alpaca/
+qwen3-alpaca-lora-text/
+merged_qwen3_0.6B_text/

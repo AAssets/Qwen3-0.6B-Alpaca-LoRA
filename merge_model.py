@@ -4,9 +4,9 @@ from peft import PeftModel
 import os
 
 # 1. Configuration
-BASE_MODEL_ID = "./model_hub"  
-LORA_PATH = "./qwen3-alpaca-lora"       
-MERGED_DIR = "./merged_qwen_alpaca"     
+BASE_MODEL_ID = "Qwen/Qwen3-0.6B-Base"
+LORA_PATH = "./qwen3-alpaca-lora-text"
+MERGED_DIR = "./merged_qwen3_0.6B_text"
 
 # 2. Load Base Model
 print(f"Loading Base Model: {BASE_MODEL_ID}...")
@@ -32,5 +32,5 @@ model.save_pretrained(MERGED_DIR)
 tokenizer.save_pretrained(MERGED_DIR)
 
 print("-" * 30)
-print(f"huggingface-cli chat --model {MERGED_DIR} --trust-remote-code")
+print(f"transformers chat {MERGED_DIR} --trust_remote_code")
 print("-" * 30)
