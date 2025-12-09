@@ -20,8 +20,6 @@ if tokenizer.pad_token is None:
 tokenizer.model_max_length = 512
 
 def create_text_column(example):
-    # 手动构建 Qwen ChatML 格式字符串
-    # 格式：<|im_start|>user\n问题<|im_end|>\n<|im_start|>assistant\n回答<|im_end|>\n
     
     inst = example['instruction']
     inp = example['input']
