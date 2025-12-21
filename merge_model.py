@@ -4,9 +4,9 @@ from peft import PeftModel
 import os
 
 # 1. Configuration
-BASE_MODEL_ID = "Qwen/Qwen3-0.6B-Base"
-LORA_PATH = "./qwen3-alpaca-lora-text"
-MERGED_DIR = "./merged_qwen3_0.6B_text"
+BASE_MODEL_ID = "model_hub/Qwen2.5-0.5B"
+LORA_PATH = "./qwen2.5-0.5B-alpaca-lora"
+MERGED_DIR = "./merged_qwen2.5-0.5B-alpaca-lora"
 
 # 2. Load Base Model
 print(f"Loading Base Model: {BASE_MODEL_ID}...")
